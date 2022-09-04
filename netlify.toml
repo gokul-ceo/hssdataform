@@ -1,0 +1,6 @@
+[[redirects]]
+    from = '/'
+    to = "/table"
+    status = 301
+    query = {path=":path"}
+    
