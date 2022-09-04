@@ -1,24 +1,41 @@
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import  { useEffect, useState } from "react";
+import Navbar from "./header";
 let My_list =[];
 function Tabledisplay(){
   const[data,setdata]=useState(My_list)
   function fetchData(){
 
-    axios.get('https://arcane-journey-42241.herokuapp.com/data')
+    axios.get('https://arcane-journey-42241.herokuapp.com/'+process.env.REACT_APP_KEY+'/data')
     .then(res =>{
       My_list = res.data
-      console.log('Details Got from server : ',My_list);
       setdata(My_list)
     })
   }
  useEffect(()=>{
-    console.log('executed once!!!');
     fetchData()
   },[]);
+  var today = new Date()
+  var dd = today.getDate();
+      var mm = today.getMonth() + 1;
+
+      var yyyy = today.getFullYear();
+      if (dd < 10) {
+          dd = '0' + dd;
+      }
+      if (mm < 10) {
+          mm = '0' + mm;
+      }
+      var TodayDate = dd + '/' + mm + '/' + yyyy;
+
   return <>
-      <table class="table">
+     <Navbar/>
+     <div className="container-sm p-2">
+      <div className="contianer-sm d-inline border-bottom border-5 border-info">
+      <span className="fs-5 fw-bold text-info">Displaying of {TodayDate}</span>
+      </div>
+      <table className="table table-sm my-4">
     <thead>
     <tr>
       <th scope="col">Date</th>
@@ -38,10 +55,11 @@ function Tabledisplay(){
      ))}
   </tbody>
   </table>
-
+</div>
   </>
     
   }
+
   // return <h1>Iam table display1</h1>
     // var totalcredit = []
   //   const[data,setdata]=useState()

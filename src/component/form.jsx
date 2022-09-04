@@ -1,14 +1,13 @@
 import React from "react";
 import CreditDebit from "../component/CrediDebit";
+// import env from "react-dotenv";
 import { useState } from "react";
 import '../component/App.css'
 import Alert from "./Alert";
 import axios from "axios";
 import Selecttype from "../component/Selecttype";
 import Navbar from '../component/header'
-const url = 'https://arcane-journey-42241.herokuapp.com/';
-// const testurl = 'http://localhost:4000/'
-var dataArray = [];
+var dataArray = []; 
 var today = new Date()
 
 
@@ -38,7 +37,8 @@ function handlechange(e){
 
 
  async function senddetails(senditem){
-    axios.post(url,(details))
+  console.log(process.env.KEY);
+    axios.post('https://arcane-journey-42241.herokuapp.com/'+process.env.REACT_APP_KEY+'/',(details))
     .then(function(res){
       console.log('sent details: ',details);
       console.log(res);
@@ -55,17 +55,14 @@ function handlechange(e){
 }
 
 const[details,setdetails] = useState({title:'',amount:'',type:'',Date:'',time:''});
-const[moredetails,setmoredetails] = useState({date:TodayDate,credit:creDit,debit:deBit})
+// const[moredetails,setmoredetails] = useState({date:TodayDate,credit:creDit,debit:deBit})
 const[sumbited,setsumbited] = useState(false)
 function handlesumbit(event){
   
     event.preventDefault()
-    console.log("details:  ",details);
     senddetails(details)
     handlechange(event);
     dataArray.push(details)
-    
-    console.log("dataArray : ",dataArray);
     setdetails({title:'',amount:''});
     setselect('');
    
@@ -73,7 +70,7 @@ function handlesumbit(event){
     var totalcredit = []
     var totaldebit = []
 
-    axios.get('https://arcane-journey-42241.herokuapp.com/data')
+    axios.get('https://arcane-journey-42241.herokuapp.com/'+process.env.REACT_APP_KEY+'/data')
     .then(res =>{
       var arr = res.data;
       console.log("value of arr: ",arr);
@@ -94,7 +91,6 @@ function handlesumbit(event){
       totaldebit.forEach(element =>{
         currentdebit+=element
       })
-      setmoredetails({date:TodayDate,credit:creDit,debit:deBit})
       setdebit(currentdebit)
       setcredit(currentcredit)
       settotal(currentcredit - currentdebit)
