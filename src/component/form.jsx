@@ -134,7 +134,7 @@ function handlesumbit(event){
     
    <div className='container  shadow-lg  bg-body rounded' >
    <div className=" mw-100 text-center mw-100" style={{width:'100%'}}>
-       <span className="fs-2 text-dark font-monospace ">Expense Tracker</span>
+       <span className="fs-1 text-dark font-monospace ">Expense Tracker..</span>
        </div>
        <Selecttype style1 = {style.cbtn} style2={style.dbtn} function = {handlechange} />
        <form className='' onSubmit={handlesumbit}>
