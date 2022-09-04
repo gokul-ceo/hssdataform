@@ -40,9 +40,6 @@ function handlechange(e){
   console.log(process.env.KEY);
     axios.post('https://arcane-journey-42241.herokuapp.com/'+process.env.REACT_APP_KEY+'/',(details))
     .then(function(res){
-      console.log('sent details: ',details);
-      console.log(res);
-      console.log('response has sent!!..');
       
       
       
@@ -133,7 +130,7 @@ function handlesumbit(event){
     }, 3000);};
   return <>
   <Navbar/>
-  <div className='container  '>
+  <div className='container'>
     
    <div className='container  shadow-lg  bg-body rounded' >
    <div className=" mw-100 text-center" style={{width:'100%'}}>
@@ -155,7 +152,7 @@ function handlesumbit(event){
        </form>
    </div>
    {sumbited? <Alert/> : null}
-   
+   <a href="/table">click me!</a>
      
   </div>
   </>
