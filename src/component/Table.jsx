@@ -7,7 +7,7 @@ function Tabledisplay(){
   const[data,setdata]=useState(My_list)
   function fetchData(){
 
-    axios.get('https://arcane-journey-42241.herokuapp.com/'+process.env.REACT_APP_KEY+'/data')
+    axios.get('https://arcane-journey-42241.herokuapp.com/data')
     .then(res =>{
       My_list = res.data
       setdata(My_list)

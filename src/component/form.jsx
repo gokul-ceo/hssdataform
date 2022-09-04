@@ -38,7 +38,7 @@ function handlechange(e){
 
  async function senddetails(senditem){
   console.log(process.env.KEY);
-    axios.post('https://arcane-journey-42241.herokuapp.com/'+process.env.REACT_APP_KEY+'/',(details))
+    axios.post('https://arcane-journey-42241.herokuapp.com/',(details))
     .then(function(res){
       
       
@@ -67,7 +67,7 @@ function handlesumbit(event){
     var totalcredit = []
     var totaldebit = []
 
-    axios.get('https://arcane-journey-42241.herokuapp.com/'+process.env.REACT_APP_KEY+'/data')
+    axios.get('https://arcane-journey-42241.herokuapp.com//data')
     .then(res =>{
       var arr = res.data;
       console.log("value of arr: ",arr);
@@ -133,7 +133,7 @@ function handlesumbit(event){
   <div className='container'>
     
    <div className='container  shadow-lg  bg-body rounded' >
-   <div className=" mw-100 text-center" style={{width:'100%'}}>
+   <div className=" mw-100 text-center mw-100" style={{width:'100%'}}>
        <span className="fs-5 text-dark font-monospace ">Expense Tracker</span>
        </div>
        <Selecttype style1 = {style.cbtn} style2={style.dbtn} function = {handlechange} />
