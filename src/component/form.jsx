@@ -136,7 +136,7 @@ function handlesumbit(event){
   <div className='container  '>
     
    <div className='container  shadow-lg  bg-body rounded' >
-   <div className=" mw-100 text-center" >
+   <div className=" mw-100 text-center" style={{width:'100%'}}>
        <span className="fs-5 text-dark font-monospace ">Expense Tracker</span>
        </div>
        <Selecttype style1 = {style.cbtn} style2={style.dbtn} function = {handlechange} />
