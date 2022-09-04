@@ -7,11 +7,17 @@ import Alert from "./Alert";
 import axios from "axios";
 import Selecttype from "../component/Selecttype";
 import Navbar from '../component/header'
+import { useMediaQuery } from "react-responsive";
 var dataArray = []; 
 var today = new Date()
 
 
+
 function Form(){
+  
+const ismobile = useMediaQuery({
+  query:'(min-device-width: 480px)',
+});
 var dd = today.getDate();
       var mm = today.getMonth() + 1;
 
@@ -49,6 +55,12 @@ function handlechange(e){
     //   console.log("posted details : ",moredetails);
     //   console.log('sent!!');
     // })
+}
+const stye = {
+  mobilediv:{
+    width:'100%',
+    backgroundColor:'red'
+  }
 }
 
 const[details,setdetails] = useState({title:'',amount:'',type:'',Date:'',time:''});
@@ -132,8 +144,8 @@ function handlesumbit(event){
   <Navbar/>
   <div className='container'>
     
-   <div className='container  shadow-lg  bg-body rounded' >
-   <div className=" mw-100 text-center mw-100" style={{width:'100%'}}>
+   <div className='container  shadow-lg  bg-body rounded'  >
+   <div className=" mw-100 text-center mw-100" style={{width: '100%',backgroundColor:'grey'}}>
        <span className="fs-1 text-dark font-monospace ">Expense Tracker..</span>
        </div>
        <Selecttype style1 = {style.cbtn} style2={style.dbtn} function = {handlechange} />
@@ -154,6 +166,9 @@ function handlesumbit(event){
    {sumbited? <Alert/> : null}
    <a href="/table">click me!</a>
      
+  </div>
+  <div style={ismobile&&style.mobilediv}>
+
   </div>
   </>
  
