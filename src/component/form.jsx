@@ -56,7 +56,7 @@ function handlechange(e){
     //   console.log('sent!!');
     // })
 }
-const stye = {
+const design = {
   mobilediv:{
     width:'100%',
     backgroundColor:'red'
@@ -167,7 +167,7 @@ function handlesumbit(event){
    <a href="/table">click me!</a>
      
   </div>
-  <div style={ismobile&&style.mobilediv}>
+  <div style={ismobile&&design.mobilediv}>
 
   </div>
   </>
