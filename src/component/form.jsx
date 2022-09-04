@@ -133,10 +133,10 @@ function handlesumbit(event){
     }, 3000);};
   return <>
   <Navbar/>
-  <div className='container-sm  '>
+  <div className='container-md  '>
     
-   <div className='container-sm p-2 shadow-lg  my-3 bg-body rounded' >
-   <div className="contianer-sm text-center mx-auto" >
+   <div className='container-md p-2 shadow-lg  my-3 bg-body rounded' >
+   <div className="contianer-md text-center mx-auto" >
        <span className="fs-5 text-dark font-monospace ">Expense Tracker</span>
        </div>
        <Selecttype style1 = {style.cbtn} style2={style.dbtn} function = {handlechange} />

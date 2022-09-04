@@ -31,7 +31,7 @@ function Tabledisplay(){
 
   return <>
      <Navbar/>
-     <div className="container-sm p-2">
+     <div className="container-md p-2">
       <div className="contianer-sm d-inline border-bottom border-5 border-info">
       <span className="fs-5 fw-bold text-info">Displaying of {TodayDate}</span>
       </div>
