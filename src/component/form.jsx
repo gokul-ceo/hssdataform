@@ -133,9 +133,9 @@ function handlesumbit(event){
     }, 3000);};
   return <>
   <Navbar/>
-  <div className='container-md  '>
+  <div className='container  '>
     
-   <div className='container-md  shadow-lg  bg-body rounded' >
+   <div className='container  shadow-lg  bg-body rounded' >
    <div className="contianer-md text-center mx-auto" >
        <span className="fs-5 text-dark font-monospace ">Expense Tracker</span>
        </div>
