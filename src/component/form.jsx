@@ -134,12 +134,12 @@ function handlesumbit(event){
     
    <div className='container  shadow-lg  bg-body rounded' >
    <div className=" mw-100 text-center mw-100" style={{width:'100%'}}>
-       <span className="fs-5 text-dark font-monospace ">Expense Tracker</span>
+       <span className="fs-2 text-dark font-monospace ">Expense Tracker</span>
        </div>
        <Selecttype style1 = {style.cbtn} style2={style.dbtn} function = {handlechange} />
        <form className='' onSubmit={handlesumbit}>
        <div className='mb-3'>
-       <label className='form-label fw-semibold '>Title</label>
+       <label className='form-label fs-2 fw-semibold '>Title</label>
        <input type='text' onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }} onChange={(e)=> setdetails({...details, title: e.target.value,type:select,Date:TodayDate,time:nowtime})} value = {details.title} name='title' className='form-control' id='titleentry' placeholder='enter title' required></input>
        </div>
        <div className='mb-3'>
