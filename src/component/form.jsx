@@ -2,6 +2,7 @@ import React from "react";
 import CreditDebit from "../component/CrediDebit";
 // import env from "react-dotenv";
 import { useState } from "react";
+import Tabledisplay from "./Table";
 import '../component/App.css'
 import '../component/form.css'
 import Alert from "./Alert";
@@ -143,7 +144,7 @@ function handlesumbit(event){
     }, 3000);};
   return <>
   <Navbar/>
-  <div  id="main-container">
+  <div  id="main-container" className="my-5">
     
    <div className='container  shadow-lg  bg-body rounded' id="actual-form-container" >
    <div className=" mw-100 text-center mw-100" id="titel-container" style={{width: '100%',backgroundColor:'grey'}}>
@@ -165,8 +166,10 @@ function handlesumbit(event){
        </form>
    </div>
    {sumbited? <Alert/> : null}
-   <a href="/table">click me!</a>
      
+  </div>
+  <div className="container-sm" id="tabledisplay">
+  <Tabledisplay/>
   </div>
 
   </>

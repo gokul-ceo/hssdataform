@@ -6,11 +6,11 @@ function CreditDebit(props){
        <div className='row gap-4'>
        <div className='col h-auto border rounded border-success'>
          <span className='fs-1'style={props.style1}>Credit</span>
-         <span>+{props.C}</span>
+         <h3 className="fs-1">+{props.C}</h3>
        </div>
        <div className='col h-auto border  rounded border-danger'>
        <span className='fs-1' style={props.style2}>Debit</span>
-       <span>-{props.D}</span>
+       <h3 className="fs-1">-{props.D}</h3>
        </div>
         </div>
         <div className='row'>
