@@ -3,6 +3,7 @@ import CreditDebit from "../component/CrediDebit";
 // import env from "react-dotenv";
 import { useState } from "react";
 import '../component/App.css'
+import '../component/form.css'
 import Alert from "./Alert";
 import axios from "axios";
 import Selecttype from "../component/Selecttype";
@@ -142,23 +143,23 @@ function handlesumbit(event){
     }, 3000);};
   return <>
   <Navbar/>
-  <div className='container'>
+  <div  id="main-container">
     
-   <div className='container  shadow-lg  bg-body rounded'  >
-   <div className=" mw-100 text-center mw-100" style={{width: '100%',backgroundColor:'grey'}}>
+   <div className='container  shadow-lg  bg-body rounded' id="actual-form-container" >
+   <div className=" mw-100 text-center mw-100" id="titel-container" style={{width: '100%',backgroundColor:'grey'}}>
        <span className="fs-1 text-dark font-monospace ">Expense Tracker..</span>
        </div>
        <Selecttype style1 = {style.cbtn} style2={style.dbtn} function = {handlechange} />
        <form className='' onSubmit={handlesumbit}>
-       <div className='mb-3'>
+       <div className='mb-3' id="first-input-container">
        <label className='form-label fs-2 fw-semibold '>Title</label>
        <input type='text'  onChange={(e)=> setdetails({...details, title: e.target.value,type:select,Date:TodayDate,time:nowtime})} value = {details.title} name='title' className='form-control' id='titleentry' placeholder='enter title' required></input>
        </div>
-       <div className='mb-3'>
+       <div className='mb-3' id="second-input-container">
        <label  className='form-label fw-semibold'>Amount</label>
        <input type='number' onChange={(e)=>setdetails({...details, amount:e.target.value,type:select,Date:TodayDate,time:nowtime})} value={details.amount} name='amount' className='form-control' id='amountentry' placeholder='enter amount' required></input>
        </div>
-       <button type='submit' onClick={onclick} className={select==='credit'?'btn btn-success':'btn btn-danger' }  disabled={select===''?true:false} hidden={select===''&&'hidden'}>{select==='credit'?'Update credit':'Update debit'}</button>
+       <button type='submit' id="form-submit-button" onClick={onclick} className={select==='credit'?'btn btn-success':'btn btn-danger' }  disabled={select===''?true:false} hidden={select===''&&'hidden'}>{select==='credit'?'Update credit':'Update debit'}</button>
        <CreditDebit style1 = {style.cmcolor1} style = {style.cmcolor2} C={creDit} D={deBit} T={total} />
 
        </form>

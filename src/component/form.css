@@ -1,0 +1,10 @@
+#main-container{
+    max-width: 470;
+    width: 100%;
+}
+
+#actual-form-container{
+    max-width: 900px;
+    height:30rem;
+    width: 100%;
+}
