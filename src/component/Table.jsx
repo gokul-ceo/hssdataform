@@ -27,7 +27,7 @@ function Tabledisplay(){
       if (mm < 10) {
           mm = '0' + mm;
       }
-      var Date = dd + '/' + mm + '/' + yyyy;
+      var date = dd + '/' + mm + '/' + yyyy;
 
   return <>
      <Navbar/>
@@ -70,7 +70,7 @@ function Tabledisplay(){
   <tbody>
      {data?.map((item)=> (
       <tr>
-      <td>{item.Date}</td>
+      <td>{item.date}</td>
       <td>{item.title}</td>
       <td>{item.type}</td>
       <td>{item.amount}</td>
