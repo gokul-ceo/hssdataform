@@ -81,7 +81,7 @@ function handlesumbit(event){
     var totalcredit = []
     var totaldebit = []
 
-    axios.get('https://arcane-journey-42241.herokuapp.com//data')
+    axios.get('https://arcane-journey-42241.herokuapp.com/data')
     .then(res =>{
       var arr = res.data;
       console.log("value of arr: ",arr);

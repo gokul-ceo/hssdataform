@@ -35,8 +35,8 @@ function Tabledisplay(){
 
      </div>
      
-     <div className="container p-2 bg-light" id="display-table">
-      <table className="table table-sm my-4">
+     <div className="container p-2 bg-light my-4" id="display-table">
+      <table className="table table-lg my-4" id="table">
     <thead>
     <tr>
       <th scope="col">Date</th>
@@ -57,7 +57,7 @@ function Tabledisplay(){
   </tbody>
   </table>
 </div>
-
+  <button onClick={fetchData}>Refresh</button>
   </>
     
   }
