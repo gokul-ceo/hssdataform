@@ -152,11 +152,11 @@ function handlesumbit(event){
        <form className='' onSubmit={handlesumbit}>
        <div className='mb-3'>
        <label className='form-label fs-2 fw-semibold '>Title</label>
-       <input type='text' onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }} onChange={(e)=> setdetails({...details, title: e.target.value,type:select,Date:TodayDate,time:nowtime})} value = {details.title} name='title' className='form-control' id='titleentry' placeholder='enter title' required></input>
+       <input type='text'  onChange={(e)=> setdetails({...details, title: e.target.value,type:select,Date:TodayDate,time:nowtime})} value = {details.title} name='title' className='form-control' id='titleentry' placeholder='enter title' required></input>
        </div>
        <div className='mb-3'>
        <label  className='form-label fw-semibold'>Amount</label>
-       <input type='number'onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }} onChange={(e)=>setdetails({...details, amount:e.target.value,type:select,Date:TodayDate,time:nowtime})} value={details.amount} name='amount' className='form-control' id='amountentry' placeholder='enter amount' required></input>
+       <input type='number' onChange={(e)=>setdetails({...details, amount:e.target.value,type:select,Date:TodayDate,time:nowtime})} value={details.amount} name='amount' className='form-control' id='amountentry' placeholder='enter amount' required></input>
        </div>
        <button type='submit' onClick={onclick} className={select==='credit'?'btn btn-success':'btn btn-danger' }  disabled={select===''?true:false} hidden={select===''&&'hidden'}>{select==='credit'?'Update credit':'Update debit'}</button>
        <CreditDebit style1 = {style.cmcolor1} style = {style.cmcolor2} C={creDit} D={deBit} T={total} />
