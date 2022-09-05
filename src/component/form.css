@@ -20,7 +20,7 @@
 }
 #display-table{
     overflow:scroll;
-    height: 500px;
+    height: 50rem;
     width: 50rem;
 }
 #tableheading{

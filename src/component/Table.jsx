@@ -6,7 +6,7 @@ let My_list =[];
 function Tabledisplay(){
   const[loading,setloading] = useState(false);
   const[data,setdata]=useState(My_list)
-  function fetchData(){
+   function fetchData(){
     setloading(true)
     axios.get('https://arcane-journey-42241.herokuapp.com/data')
     .then(res =>{
@@ -32,41 +32,53 @@ function Tabledisplay(){
   //     var TodayDate = dd + '/' + mm + '/' + yyyy;
 
   return <>
-     <div className="container-xl text-center bg-info border rounded-pill" id="tableheading">
-     <h2>Updated Data</h2>
-
-     </div>
      {loading? (
      <div className="text-center my-5">
      <div className="spinner-border" role="status">
        <span className="visually-hidden">Loading...</span>
      </div>
-   </div>):(
-           <div className="container p-2 bg-light my-4" id="display-table">
-           <table className="table table-sm my-4" id="table">
-         <thead>
-         <tr>
-           <th scope="col" className="fs-4">S.NO</th>
-           <th scope="col" className="fs-4">Date</th>
-           <th scope="col" className="fs-4">Title</th>
-           <th scope="col" className="fs-4">Type</th>
-           <th scope="col" className="fs-4">Amount</th>
-         </tr>
-       </thead>
-       <tbody>
-          {data?.map((item,i)=> (
-           <tr key={i}>
-           <td className="fs-4">{i+1}</td>
-           <td className="fs-4">{item.Date}</td>
-           <td className="fs-4">{item.title}</td>
-           <td className="fs-4">{item.type}</td>
-           <td className="fs-4">{item.amount}</td>
-         </tr>
-          ))}
-       </tbody>
-       </table>
+   </div>):
+   ( 
+    <div>
+    {(() =>{
+      if (My_list.length==='0'){
+        return (<div className="container-sm bg-primary"><h4>No data available</h4></div>)
+      }else{
+        return (<div className="container p-2 bg-light my-5" id="display-table">
+        <table className="table table-sm my-2" id="table">
+      <thead className=" table-light">
+      <tr>
+        <th scope="col" className="fs-5 my-2">S.NO</th>
+        <th scope="col" className="fs-5 my-2">Date</th>
+        <th scope="col" className="fs-5 my-2">Time</th>
+        <th scope="col" className="fs-5 my-2">Title</th>
+        <th scope="col" className="fs-5 my-2">Type</th>
+        <th scope="col" className="fs-5 my-2">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+       {data?.map((item,i)=> (
+        <tr key={i}>
+        <td className="fs-5">{i+1}</td>
+        <td className="fs-5">{item.Date}</td>
+        <td className="fs-5">{item.time}</td>
+        <td className="fs-5">{item.title}</td>
+        <td className="fs-5">{item.type}</td>
+        <td className="fs-5">{item.amount}</td>
+      </tr>
+       ))}
+    </tbody>
+    </table>
+  </div>)
+      }
+
+    }
+
+    )()}
+
      </div>
    )
+  
      }
 
   <button onClick={fetchData}>Refresh</button>

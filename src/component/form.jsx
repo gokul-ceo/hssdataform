@@ -168,9 +168,12 @@ function handlesumbit(event){
    {sumbited? <Alert/> : null}
      
   </div>
+  <div className="container-xl text-center bg-info border rounded-pill" id="tableheading">
+     <h2>Updated Data</h2></div>
   <div className="container-sm" id="tabledisplay">
   <Tabledisplay/>
   </div>
+
 
   </>
  
