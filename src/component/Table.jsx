@@ -1,7 +1,7 @@
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import  { useEffect, useState } from "react";
-import Navbar from "./header";
+// import Navbar from "./header";
 let My_list =[];
 function Tabledisplay(){
   const[data,setdata]=useState(My_list)
@@ -16,26 +16,26 @@ function Tabledisplay(){
  useEffect(()=>{
     fetchData()
   },[]);
-  var today = new Date()
-  var dd = today.getDate();
-      var mm = today.getMonth() + 1;
+  // var today = new Date()
+  // var dd = today.getDate();
+  //     var mm = today.getMonth() + 1;
 
-      var yyyy = today.getFullYear();
-      if (dd < 10) {
-          dd = '0' + dd;
-      }
-      if (mm < 10) {
-          mm = '0' + mm;
-      }
-      var TodayDate = dd + '/' + mm + '/' + yyyy;
+  //     var yyyy = today.getFullYear();
+  //     if (dd < 10) {
+  //         dd = '0' + dd;
+  //     }
+  //     if (mm < 10) {
+  //         mm = '0' + mm;
+  //     }
+  //     var TodayDate = dd + '/' + mm + '/' + yyyy;
 
   return <>
-     <Navbar/>
-     <a href="/">click me!</a>
-     <div className="container-md p-2" id="display-table">
-      <div className="contianer-sm d-inline border-bottom border-5 border-info">
-      <span className="fs-5 fw-bold text-info">Displaying of {TodayDate}</span>
-      </div>
+     <div className="container-xl text-center bg-info border rounded-pill" id="tableheading">
+     <h2>Updated Data</h2>
+
+     </div>
+     
+     <div className="container p-2 bg-light" id="display-table">
       <table className="table table-sm my-4">
     <thead>
     <tr>
