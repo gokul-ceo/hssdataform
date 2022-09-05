@@ -37,30 +37,30 @@ function Tabledisplay(){
 
      </div>
      {loading? (
-     <div class="text-center my-5">
-     <div class="spinner-border" role="status">
-       <span class="visually-hidden">Loading...</span>
+     <div className="text-center my-5">
+     <div className="spinner-border" role="status">
+       <span className="visually-hidden">Loading...</span>
      </div>
    </div>):(
            <div className="container p-2 bg-light my-4" id="display-table">
            <table className="table table-sm my-4" id="table">
          <thead>
          <tr>
-           <th scope="col">S.NO</th>
-           <th scope="col">Date</th>
-           <th scope="col">Title</th>
-           <th scope="col">Type</th>
-           <th scope="col">Amount</th>
+           <th scope="col" className="fs-4">S.NO</th>
+           <th scope="col" className="fs-4">Date</th>
+           <th scope="col" className="fs-4">Title</th>
+           <th scope="col" className="fs-4">Type</th>
+           <th scope="col" className="fs-4">Amount</th>
          </tr>
        </thead>
        <tbody>
           {data?.map((item,i)=> (
-           <tr>
-           <td>{i+1}</td>
-           <td>{item.Date}</td>
-           <td>{item.title}</td>
-           <td>{item.type}</td>
-           <td>{item.amount}</td>
+           <tr key={i}>
+           <td className="fs-4">{i+1}</td>
+           <td className="fs-4">{item.Date}</td>
+           <td className="fs-4">{item.title}</td>
+           <td className="fs-4">{item.type}</td>
+           <td className="fs-4">{item.amount}</td>
          </tr>
           ))}
        </tbody>
