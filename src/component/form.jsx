@@ -147,15 +147,15 @@ function handlesumbit(event){
     
    <div className='container  shadow-lg  bg-body rounded' id="actual-form-container" >
    <div className=" mw-100 text-center mw-100" id="titel-container" style={{width: '100%',backgroundColor:'grey'}}>
-       <span className="fs-1 text-dark font-monospace ">Expense Tracker..</span>
+       <span className="fs-1 text-dark font-monospace ">Expense Tracker</span>
        </div>
        <Selecttype style1 = {style.cbtn} style2={style.dbtn} function = {handlechange} />
        <form className='' onSubmit={handlesumbit}>
-       <div className='mb-3' id="first-input-container">
+       <div className='mb-3 fs-2' id="first-input-container">
        <label className='form-label fs-2 fw-semibold '>Title</label>
        <input type='text'  onChange={(e)=> setdetails({...details, title: e.target.value,type:select,Date:TodayDate,time:nowtime})} value = {details.title} name='title' className='form-control' id='titleentry' placeholder='enter title' required></input>
        </div>
-       <div className='mb-3' id="second-input-container">
+       <div className='mb-3 fs-2' id="second-input-container">
        <label  className='form-label fw-semibold'>Amount</label>
        <input type='number' onChange={(e)=>setdetails({...details, amount:e.target.value,type:select,Date:TodayDate,time:nowtime})} value={details.amount} name='amount' className='form-control' id='amountentry' placeholder='enter amount' required></input>
        </div>

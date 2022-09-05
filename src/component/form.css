@@ -8,3 +8,13 @@
     height:30rem;
     width: 100%;
 }
+#first-input-container,#second-input-container {
+    font-size: 20px;
+}
+
+#titleentry{
+    font-size: larger;
+}
+#amountentry{
+    font-size: larger;
+}
