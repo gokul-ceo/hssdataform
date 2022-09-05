@@ -27,7 +27,7 @@ function Tabledisplay(){
       if (mm < 10) {
           mm = '0' + mm;
       }
-      var TodayDate = dd + '/' + mm + '/' + yyyy;
+      var Date = dd + '/' + mm + '/' + yyyy;
 
   return <>
      <Navbar/>
