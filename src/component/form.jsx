@@ -167,9 +167,7 @@ function handlesumbit(event){
    <a href="/table">click me!</a>
      
   </div>
-  <div style={ismobile&&design.mobilediv}>
-   testing.....
-  </div>
+
   </>
  
 }
