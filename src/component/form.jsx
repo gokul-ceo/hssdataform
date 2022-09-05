@@ -7,7 +7,7 @@ import Alert from "./Alert";
 import axios from "axios";
 import Selecttype from "../component/Selecttype";
 import Navbar from '../component/header'
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 var dataArray = []; 
 var today = new Date()
 
@@ -15,9 +15,9 @@ var today = new Date()
 
 function Form(){
   
-const ismobile = useMediaQuery({
-  query:'(min-device-width: 480px)',
-});
+// const ismobile = useMediaQuery({
+//   query:'(min-device-width: 480px)',
+// });
 var dd = today.getDate();
       var mm = today.getMonth() + 1;
 
@@ -56,12 +56,12 @@ function handlechange(e){
     //   console.log('sent!!');
     // })
 }
-const design = {
-  mobilediv:{
-    width:'100%',
-    backgroundColor:'red'
-  }
-}
+// const design = {
+//   mobilediv:{
+//     width:'100%',
+//     backgroundColor:'red'
+//   }
+// }
 
 const[details,setdetails] = useState({title:'',amount:'',type:'',Date:'',time:''});
 // const[moredetails,setmoredetails] = useState({date:TodayDate,credit:creDit,debit:deBit})
