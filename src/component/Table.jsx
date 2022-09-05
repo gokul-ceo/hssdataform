@@ -32,7 +32,7 @@ function Tabledisplay(){
   return <>
      <Navbar/>
      <a href="/">click me!</a>
-     <div className="container-md overflow-auto p-2">
+     {/* <div className="container-md overflow-auto p-2">
       <div className="contianer-sm d-inline border-bottom border-5 border-info">
       <span className="fs-5 fw-bold text-info">Displaying of {TodayDate}</span>
       </div>
@@ -56,6 +56,29 @@ function Tabledisplay(){
      ))}
   </tbody>
   </table>
+</div> */}
+<div id="display-table">
+<table className="table table-sm my-4">
+    <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Title</th>
+      <th scope="col">Type</th>
+      <th scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+     {data?.map((item)=> (
+      <tr>
+      <td>{item.Date}</td>
+      <td>{item.title}</td>
+      <td>{item.type}</td>
+      <td>{item.amount}</td>
+    </tr>
+     ))}
+  </tbody>
+  </table>
+
 </div>
 
   </>

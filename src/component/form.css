@@ -18,4 +18,7 @@
 #amountentry{
     font-size: larger;
 }
-
+#display-table{
+    overflow:scroll;
+    height: 500px;
+}
